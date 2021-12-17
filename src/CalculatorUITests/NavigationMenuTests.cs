@@ -122,6 +122,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Currency"));
         }
 
+        /// <summary>
+        /// Test that the Volume navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Volume_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Volume navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Volume"));
+        }
+
         #endregion
     }
 }
