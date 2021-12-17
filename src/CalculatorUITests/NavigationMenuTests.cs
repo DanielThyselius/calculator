@@ -10,6 +10,25 @@ namespace CalculatorUITests
     public class NavigationMenuTests
     {
         private static UnitConverterPage page = new UnitConverterPage();
+        private readonly string[] menuOptions = {
+            "Standard",
+            "Scientific",
+            "Programmer",
+            "Date",
+            "Currency",
+            "Volume",
+            "Length",
+            "Weight",
+            "Temperature",
+            "Energy",
+            "Area",
+            "Speed",
+            "Time",
+            "Power",
+            "Data",
+            "Pressure",
+            "Angle"
+        };
 
         /// <summary>
         /// Initializes the WinAppDriver web driver session.
@@ -68,190 +87,19 @@ namespace CalculatorUITests
         }
 
         /// <summary>
-        /// Test that the Standard navigation menu option is not visible on application startup.
+        /// Test that none of the navigation menu options are visible on application startup.
         /// </summary>
         [TestMethod]
         [Priority(0)]
-        public void Standard_Menu_Option_Not_Visible_On_Startup()
+        public void Menu_Options_Not_Visible_On_Startup()
         {
-            // Assert that the Standard navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Standard"));
-        }
-
-        /// <summary>
-        /// Test that the Scientific navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Scientific_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Scientific navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Scientific"));
-        }
-
-        /// <summary>
-        /// Test that the Programmer navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Programmer_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Programmer navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Programmer"));
-        }
-
-        /// <summary>
-        /// Test that the Date navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Date_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Date navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Date"));
-        }
-
-        /// <summary>
-        /// Test that the Currency navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Currency_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Currency navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Currency"));
-        }
-
-        /// <summary>
-        /// Test that the Volume navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Volume_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Volume navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Volume"));
-        }
-
-        /// <summary>
-        /// Test that the Length navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Length_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Length navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Length"));
-        }
-
-        /// <summary>
-        /// Test that the Weight navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Weight_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Weight navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Weight"));
-        }
-
-        /// <summary>
-        /// Test that the Temperature navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Temperature_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Temperature navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Temperature"));
-        }
-
-        /// <summary>
-        /// Test that the Energy navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Energy_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Energy navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Energy"));
-        }
-
-        /// <summary>
-        /// Test that the Area navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Area_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Area navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Area"));
-        }
-
-        /// <summary>
-        /// Test that the Speed navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Speed_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Speed navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Speed"));
-        }
-
-        /// <summary>
-        /// Test that the Time navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Time_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Time navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Time"));
-        }
-
-        /// <summary>
-        /// Test that the Power navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Power_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Power navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Power"));
-        }
-
-        /// <summary>
-        /// Test that the Data navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Data_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Data navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Data"));
-        }
-
-        /// <summary>
-        /// Test that the Pressure navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Pressure_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Pressure navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Pressure"));
-        }
-
-        /// <summary>
-        /// Test that the Angle navigation menu option is not visible on application startup.
-        /// </summary>
-        [TestMethod]
-        [Priority(0)]
-        public void Angle_Menu_Option_Not_Visible_On_Startup()
-        {
-            // Assert that the Angle navigation menu option is not visible.
-            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Angle"));
+            // Loop through all options in navigation menu.
+            foreach (string element in this.menuOptions)
+            {
+                // Assert that navigation menu option does not exist.
+                Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId(element),
+                    "Found element with accessibilityId: \"" + element + "\" which should be hidden on application startup.");
+            }
         }
 
         #endregion
