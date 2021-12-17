@@ -221,6 +221,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Power"));
         }
 
+        /// <summary>
+        /// Test that the Data navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Data_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Data navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Data"));
+        }
+
         #endregion
     }
 }
