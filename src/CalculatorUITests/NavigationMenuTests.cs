@@ -89,6 +89,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Scientific"));
         }
 
+        /// <summary>
+        /// Test that the Programmer navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Programmer_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Programmer navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Programmer"));
+        }
+
         #endregion
     }
 }
