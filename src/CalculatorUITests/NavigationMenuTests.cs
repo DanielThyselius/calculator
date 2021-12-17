@@ -78,6 +78,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Standard"));
         }
 
+        /// <summary>
+        /// Test that the Scientific navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Scientific_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Scientific navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Scientific"));
+        }
+
         #endregion
     }
 }
