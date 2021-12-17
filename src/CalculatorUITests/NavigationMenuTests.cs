@@ -98,7 +98,7 @@ namespace CalculatorUITests
             {
                 // Assert that navigation menu option does not exist.
                 Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId(element),
-                    "Found element with accessibilityId: \"" + element + "\" which should be hidden on application startup.");
+                    "Expected to not find element with accessibilityId: \"" + element + "\".");
             }
         }
 
