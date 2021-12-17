@@ -243,6 +243,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Pressure"));
         }
 
+        /// <summary>
+        /// Test that the Angle navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Angle_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Angle navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Angle"));
+        }
+
         #endregion
     }
 }
