@@ -111,6 +111,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Date"));
         }
 
+        /// <summary>
+        /// Test that the Currency navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Currency_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Currency navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Currency"));
+        }
+
         #endregion
     }
 }
