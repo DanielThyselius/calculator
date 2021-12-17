@@ -210,6 +210,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Time"));
         }
 
+        /// <summary>
+        /// Test that the Power navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Power_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Power navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Power"));
+        }
+
         #endregion
     }
 }
