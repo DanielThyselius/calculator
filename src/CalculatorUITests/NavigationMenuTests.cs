@@ -45,6 +45,8 @@ namespace CalculatorUITests
         [TestInitialize]
         public void TestInit()
         {
+            // Make sure timeout is set to zero seconds to skip waiting for element.
+            CalculatorApp.Window.WrappedDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
         }
 
         [TestCleanup]
@@ -55,17 +57,27 @@ namespace CalculatorUITests
         #region Navigation menu visibility test
 
         /// <summary>
-        /// Ensure that the navigation menu is not open on application startup.
+        /// Test that the navigation menu is not open on application startup.
         /// </summary>
         [TestMethod]
         [Priority(0)]
-        public void NavigationMenuNotVisibleOnStartup()
+        public void Menu_Not_Visible_On_Startup()
         {
-            // Set timeout to zero seconds to skip waiting for element.
-            CalculatorApp.Window.WrappedDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(0);
             // Assert that navigation menu does not exist.
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByClassName("SplitViewPane"));
         }
+
+        /// <summary>
+        /// Test that the Standard navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Standard_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Standard navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Standard"));
+        }
+
         #endregion
     }
 }
