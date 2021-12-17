@@ -155,6 +155,17 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Weight"));
         }
 
+        /// <summary>
+        /// Test that the Temperature navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Temperature_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Temperature navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Temperature"));
+        }
+
         #endregion
     }
 }
