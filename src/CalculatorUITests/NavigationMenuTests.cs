@@ -177,6 +177,28 @@ namespace CalculatorUITests
             Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Energy"));
         }
 
+        /// <summary>
+        /// Test that the Area navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Area_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Area navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Area"));
+        }
+
+        /// <summary>
+        /// Test that the Speed navigation menu option is not visible on application startup.
+        /// </summary>
+        [TestMethod]
+        [Priority(0)]
+        public void Speed_Menu_Option_Not_Visible_On_Startup()
+        {
+            // Assert that the Speed navigation menu option is not visible.
+            Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId("Speed"));
+        }
+
         #endregion
     }
 }
