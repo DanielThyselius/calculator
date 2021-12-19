@@ -10,25 +10,6 @@ namespace CalculatorUITests
     public class NavigationMenuTests
     {
         private static UnitConverterPage page = new UnitConverterPage();
-        private readonly string[] menuOptions = {
-            "Standard",
-            "Scientific",
-            "Programmer",
-            "Date",
-            "Currency",
-            "Volume",
-            "Length",
-            "Weight",
-            "Temperature",
-            "Energy",
-            "Area",
-            "Speed",
-            "Time",
-            "Power",
-            "Data",
-            "Pressure",
-            "Angle"
-        };
 
         /// <summary>
         /// Initializes the WinAppDriver web driver session.
@@ -94,11 +75,13 @@ namespace CalculatorUITests
         public void Menu_Options_Not_Visible_On_Startup()
         {
             // Loop through all options in navigation menu.
-            foreach (string element in this.menuOptions)
+            foreach (var mode in (CalculatorMode[])Enum.GetValues(typeof(CalculatorMode)))
             {
+                var modeAccessibilityId = NavigationMenu.GetModeAccessibilityId(mode);
+
                 // Assert that navigation menu option does not exist.
-                Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId(element),
-                    "Expected to not find element with accessibilityId: \"" + element + "\".");
+                Assert.ThrowsException<WebDriverException>(() => CalculatorApp.Window.FindElementByAccessibilityId(modeAccessibilityId),
+                    "Expected to not find element with accessibilityId: \"" + modeAccessibilityId + "\".");
             }
         }
 

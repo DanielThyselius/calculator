@@ -40,11 +40,20 @@ namespace CalculatorUITestFramework
         /// <param name="mode">The mode to be changed to</param>
         public void ChangeCalculatorMode(CalculatorMode mode)
         {
+            string modeAccessibilityId = GetModeAccessibilityId(mode);
+
+            this.NavigationMenuButton.Click();
+            this.NavigationMenuPane.WaitForDisplayed();
+            this.session.TryFindElementByAccessibilityId(modeAccessibilityId).Click();
+        }
+
+        public static string GetModeAccessibilityId(CalculatorMode mode)
+        {
             string modeAccessibilityId;
             switch (mode)
             {
                 case CalculatorMode.StandardCalculator:
-                    modeAccessibilityId =  "Standard";
+                    modeAccessibilityId = "Standard";
                     break;
                 case CalculatorMode.ScientificCalculator:
                     modeAccessibilityId = "Scientific";
@@ -98,9 +107,7 @@ namespace CalculatorUITestFramework
                     throw (new ArgumentException("The mode is not valid"));
             }
 
-            this.NavigationMenuButton.Click();
-            this.NavigationMenuPane.WaitForDisplayed();
-            this.session.TryFindElementByAccessibilityId(modeAccessibilityId).Click();
+            return modeAccessibilityId;
         }
     }
 }
